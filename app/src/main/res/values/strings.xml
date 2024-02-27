@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Камень-ножницы-бумага</string>
+    <string name="start_game">Начать игру</string>
+    <string name="score">Твой счёт</string>
+</resources>
