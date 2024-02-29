@@ -15,73 +15,94 @@ class GameActivity : AppCompatActivity() {
         binding = ActivityGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val choice = listOf("Rock", "Paper", "Scissors")
+        val choice = arrayOf("Rock", "Paper", "Scissors")
         var winScore = 0
         var drawScore = 0
         var loseScore = 0
-        val result = binding.tvResult
+
+
+        fun setWinScore() = with(binding){
+            val winScoreText = getString(R.string.score_win) + " $winScore"
+            tvWin.text = winScoreText
+        }
 
 
 
-        fun rockChoice() {
+        fun setDrawScore() = with(binding){
+            val drawScoreText = getString(R.string.score_draw) + " $drawScore"
+            tvDraw.text = drawScoreText
+        }
+
+
+        fun setLoseScore() = with(binding){
+            val loseScoreText = getString(R.string.score_lose) + " $loseScore"
+            tvLose.text = loseScoreText
+        }
+
+        setWinScore()
+        setDrawScore()
+        setLoseScore()
+
+        fun rockChoice() = with(binding) {
             when (choice.random()) {
-                "Rock" -> { binding.imComputer.setImageResource(R.drawable.rock)
-                    result.visibility = View.VISIBLE
+                "Rock" -> { imComputer.setImageResource(R.drawable.rock)
+                    tvResult.visibility = View.VISIBLE
                     drawScore++
-                    binding.tvDraw.text = {R.string.score_draw + drawScore}.toString()
-                    result.text = R.string.result_draw.toString() }
-                "Paper" -> { binding.imComputer.setImageResource(R.drawable.paper)
-                    result.visibility = View.VISIBLE
+                    setDrawScore()
+                    tvResult.text = getString(R.string.result_draw) }
+
+                "Paper" -> { imComputer.setImageResource(R.drawable.paper)
+                    tvResult.visibility = View.VISIBLE
                     loseScore++
-                    binding.tvLose.text = {R.string.score_lose + loseScore}.toString()
-                    result.text = R.string.result_lose.toString() }
-                "Scissors" -> { binding.imComputer.setImageResource(R.drawable.scissors)
-                    result.visibility = View.VISIBLE
+                    setLoseScore()
+                    tvResult.text = getString(R.string.result_lose) }
+                "Scissors" -> { imComputer.setImageResource(R.drawable.scissors)
+                    tvResult.visibility = View.VISIBLE
                     winScore++
-                    binding.tvWin.text = {R.string.score_win + winScore}.toString()
-                    result.text = R.string.result_win.toString() }
+                    setWinScore()
+                    tvResult.text = getString(R.string.result_win) }
             }
 
         }
 
-        fun paperChoice() {
+        fun paperChoice() = with(binding) {
             when (choice.random()) {
                 "Rock" -> { binding.imComputer.setImageResource(R.drawable.rock)
-                    result.visibility = View.VISIBLE
+                    tvResult.visibility = View.VISIBLE
                     winScore++
-                    binding.tvWin.text = {R.string.score_win + winScore}.toString()
-                    result.text = R.string.result_win.toString() }
+                    setWinScore()
+                    tvResult.text = getString(R.string.result_win) }
                 "Paper" -> { binding.imComputer.setImageResource(R.drawable.paper)
-                    result.visibility = View.VISIBLE
+                    tvResult.visibility = View.VISIBLE
                     drawScore++
-                    binding.tvDraw.text = {R.string.score_draw + drawScore}.toString()
-                    result.text = R.string.result_draw.toString() }
+                    setDrawScore()
+                    tvResult.text = getString(R.string.result_draw) }
                 "Scissors" -> { binding.imComputer.setImageResource(R.drawable.scissors)
-                    result.visibility = View.VISIBLE
+                    tvResult.visibility = View.VISIBLE
                     loseScore++
-                    binding.tvLose.text = {R.string.score_lose + loseScore}.toString()
-                    result.text = R.string.result_lose.toString() }
+                    setLoseScore()
+                    tvResult.text = getString(R.string.result_lose) }
             }
 
         }
 
-        fun scissorsChoice() {
+        fun scissorsChoice() = with(binding) {
             when (choice.random()) {
                 "Rock" -> { binding.imComputer.setImageResource(R.drawable.rock)
-                    result.visibility = View.VISIBLE
+                    tvResult.visibility = View.VISIBLE
                     loseScore++
-                    binding.tvLose.text = {R.string.score_lose + loseScore}.toString()
-                    result.text = R.string.result_lose.toString() }
+                    setLoseScore()
+                    tvResult.text = getString(R.string.result_lose) }
                 "Paper" -> { binding.imComputer.setImageResource(R.drawable.paper)
-                    result.visibility = View.VISIBLE
+                    tvResult.visibility = View.VISIBLE
                     winScore++
-                    binding.tvWin.text = {R.string.score_win + winScore}.toString()
-                    result.text = R.string.result_win.toString() }
+                    setWinScore()
+                    tvResult.text = getString(R.string.result_win) }
                 "Scissors" -> { binding.imComputer.setImageResource(R.drawable.scissors)
-                    result.visibility = View.VISIBLE
+                    tvResult.visibility = View.VISIBLE
                     drawScore++
-                    binding.tvDraw.text = {R.string.score_draw + drawScore}.toString()
-                    result.text = R.string.result_draw.toString() }
+                    setDrawScore()
+                    tvResult.text = getString(R.string.result_draw) }
             }
 
         }
