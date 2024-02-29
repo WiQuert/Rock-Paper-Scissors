@@ -5,7 +5,7 @@
     <string name="result_win">Ты выиграл!</string>
     <string name="result_draw">У вас ничья!</string>
     <string name="result_lose">Ты проиграл!</string>
-    <string name="score_win">Побед:</string>
-    <string name="score_draw">Ничьих:</string>
-    <string name="score_lose">Поражений:</string>
+    <string name="score_win">"Побед:"</string>
+    <string name="score_draw">"Ничьих:"</string>
+    <string name="score_lose">"Поражений:"</string>
 </resources>

@@ -5,7 +5,7 @@
     <string name="result_win">You win!</string>
     <string name="result_draw">Draw!</string>
     <string name="result_lose">You lose!</string>
-    <string name="score_win">Win:</string>
-    <string name="score_lose">Lose:</string>
+    <string name="score_win">"Win:"</string>
+    <string name="score_lose">"Lose:"</string>
     <string name="score_draw">Draw:</string>
 </resources>
